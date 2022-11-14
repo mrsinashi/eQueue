@@ -7,6 +7,14 @@ class CabinetAdmin(admin.ModelAdmin):
 
 class QueueAdmin(admin.ModelAdmin):
     list_display = ('queueid', 'cabinetid', 'priority')
+    fieldsets = (
+        (None, {
+            'fields': ('queueid',)
+        }),
+        ('Details', {
+            'fields': ('cabinetid', 'priority')
+        }),
+    )
 
 admin.site.register(models.Cabinet, CabinetAdmin)
 admin.site.register(models.Queue, QueueAdmin)

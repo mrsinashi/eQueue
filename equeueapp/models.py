@@ -25,4 +25,3 @@ class Queue(models.Model):
 
     class Meta:
         verbose_name = 'Очередь'
-        verbose_name_plural = 'Очереди'

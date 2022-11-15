@@ -13,6 +13,9 @@ class CabinetSerializer(serializers.ModelSerializer):
         fields = ['id', 'cabinetid', 'name']
 
 class QueueSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        return Queue.objects.create(**validated_data)
+
     class Meta:
         model = Queue
         fields = ['id', 'queueid', 'cabinetid', 'priority']
